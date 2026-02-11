@@ -1,0 +1,102 @@
+Name,Cost,Role,Trait1,Trait2,Trait3
+Aurelion Sol,7,Magic Caster,Star Forger,Targon,
+Baron Nashor,7,Attack Fighter,Void,Riftscourge,
+Brock,7,Attack Fighter,Ixtal,,
+Ryze,7,Magic Caster,Rune Mage,,
+Sylas,7,Magic Fighter,Chainbreaker,Arcanist,Defender
+Zaahen,7,Attack Fighter,Darkin,Immortal,
+Aatrox,5,Attack Fighter,Darkin,WorldEnder,Slayer
+Annie,5,Magic Caster,Dark Child,Arcanist,
+Azir,5,Magic Marksman,Shurima,Emperor,Disruptor
+Fiddlesticks,5,Magic Assassin,Harvester,Vanquisher,
+Galio,5,Magic Tank,Demacia,Heroic,
+Kindred,5,Attack Marksman,Eternal,Quickstriker,
+Lucian & Senna,5,Attack Caster,Soulbound,Gunslinger,
+Mel,5,Magic Caster,Noxus,Disruptor,
+Ornn,5,Magic Tank,Blacksmith,Warden,
+Sett,5,Magic Fighter,Ionia,TheBoss,
+Shyvana,5,Attack Fighter,Dragonborn,Juggernaut,
+T-Hex,5,Attack Fighter,Hex Mech,Piltover,Gunslinger
+Tahm Kench,5,Magic Tank,Bilgewater,Glutton,Bruiser
+Thresh,5,Magic Fighter,Shadow Isles,Warden,
+Tibbers,5,Magic Tank,Arcanist,,
+Volibear,5,Attack Fighter,Freljord,Bruiser,
+Xerath,5,Magic Caster,Shurima,Ascendant,
+Ziggs,5,Magic Marksman,Zaun,Yordle,Longshot
+Zilean,5,Magic Caster,Chronokeeper,Invoker,
+Ambessa,4,Attack Fighter,Noxus,Vanquisher,
+Bel'Veth,4,Attack Fighter,Void,Slayer,
+Braum,4,Magic Tank,Freljord,Warden,
+Diana,4,Magic Assassin,Targon,,
+Fizz,4,Magic Assassin,Bilgewater,Yordle,
+Garen,4,Attack Tank,Demacia,Defender,
+Kai'Sa,4,Attack Caster,Assimilator,Void,Longshot
+Kalista,4,Attack Caster,Shadow Isles,Vanquisher,
+Lissandra,4,Magic Caster,Freljord,Invoker,
+Lux,4,Magic Caster,Demacia,Arcanist,
+Miss Fortune,4,Attack Caster,Bilgewater,Gunslinger,
+Nasus,4,Magic Tank,Shurima,,
+Nidalee,4,Magic Fighter,Ixtal,Huntress,
+Renekton,4,Attack Fighter,Shurima,,
+Rift Herald,4,Magic Tank,Void,Bruiser,
+Seraphine,4,Magic Caster,Piltover,Disruptor,
+Singed,4,Magic Tank,Zaun,Juggernaut,
+Skarner,4,Attack Tank,Ixtal,,
+Swain,4,Magic Tank,Noxus,Arcanist,Juggernaut
+Taric,4,Magic Tank,Targon,,
+Veigar,4,Magic Caster,Yordle,Arcanist,
+Warwick,4,Attack Fighter,Zaun,Quickstriker,
+Wukong,4,Attack Tank,Ionia,Bruiser,
+Yone,4,Hybrid Fighter,Ionia,Slayer,
+Yunara,4,Attack Marksman,Ionia,Quickstriker,
+Ahri,3,Magic Caster,Ionia,Arcanist,
+Darius,3,Attack Tank,Noxus,Defender,
+Dr. Mundo,3,Attack Tank,Zaun,Bruiser,
+Draven,3,Attack Marksman,Noxus,Quickstriker,
+Gangplank,3,Attack Fighter,Bilgewater,Slayer,Vanquisher
+Gwen,3,Magic Fighter,Shadow Isles,Disruptor,
+Jinx,3,Attack Specialist,Zaun,Gunslinger,
+Kennen,3,Magic Tank,Ionia,Yordle,Defender
+Kobuko & Yuumi,3,Magic Tank,Yordle,Bruiser,Invoker
+LeBlanc,3,Magic Caster,Noxus,Invoker,
+Leona,3,Magic Tank,Targon,,
+Loris,3,Magic Tank,Piltover,Warden,
+Malzahar,3,Magic Caster,Void,Disruptor,
+Milio,3,Magic Caster,Ixtal,Invoker,
+Nautilus,3,Magic Tank,Bilgewater,Juggernaut,Warden
+Sejuani,3,Magic Tank,Freljord,Defender,
+Vayne,3,Attack Marksman,Demacia,Longshot,
+Zoe,3,Magic Caster,Targon,,
+Aphelios,2,Attack Marksman,Targon,,
+Ashe,2,Attack Marksman,Freljord,Quickstriker,
+Bard,2,Magic Caster,Caretaker,,
+Cho'Gath,2,Magic Tank,Void,Juggernaut,
+Ekko,2,Magic Fighter,Zaun,Disruptor,
+Graves,2,Attack Fighter,Bilgewater,Gunslinger,
+Neeko,2,Magic Tank,Ixtal,Arcanist,Defender
+Orianna,2,Magic Caster,Piltover,Invoker,
+Poppy,2,Attack Tank,Demacia,Yordle,Juggernaut
+Rek'Sai,2,Attack Assassin,Void,Vanquisher,
+Sion,2,Magic Tank,Noxus,Bruiser,
+Teemo,2,Magic Caster,Yordle,Longshot,
+Tristana,2,Attack Caster,Yordle,Gunslinger,
+Tryndamere,2,Attack Fighter,Freljord,Slayer,
+Twisted Fate,2,Magic Specialist,Bilgewater,Quickstriker,
+Vi,2,Attack Fighter,Piltover,Zaun,Defender
+Xin Zhao,2,Attack Tank,Demacia,Ionia,Warden
+Yasuo,2,Attack Fighter,Ionia,Slayer,
+Yorick,2,Magic Tank,Shadow Isles,Warden,
+Anivia,1,Magic Caster,Freljord,Invoker,
+Blitzcrank,1,Magic Tank,Zaun,Juggernaut,
+Briar,1,Attack Assassin,Noxus,Slayer,Juggernaut
+Caitlyn,1,Attack Caster,Piltover,Longshot,
+Illaoi,1,Attack Tank,Bilgewater,Bruiser,
+Jarvan IV,1,Magic Tank,Demacia,Defender,
+Jhin,1,Attack Marksman,Ionia,Gunslinger,
+Kog'Maw,1,Magic Caster,Void,Arcanist,Longshot
+Lulu,1,Magic Caster,Yordle,Arcanist,
+Qiyana,1,Attack Fighter,Ixtal,Slayer,
+Rumble,1,Magic Tank,Yordle,Defender,
+Shen,1,Magic Tank,Ionia,Bruiser,
+Sona,1,Magic Caster,Demacia,Invoker,
+Viego,1,Hybrid Fighter,Shadow Isles,Quickstriker,
