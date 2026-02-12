@@ -16,8 +16,8 @@ document.addEventListener('DOMContentLoaded', function () {
             const name = cols[0] || 'Unknown';
             const cost = cols[1] || '';
             const role = cols[2] || '';
-            const traits = cols.slice(3).filter(Boolean).join(', ');
-            alert(`TFT Ultimate Bravery:\n\n${name} (Cost: ${cost})\nRole: ${role}\nTraits: ${traits}`);
+            const traits = cols.slice(3);
+            alert('TFT Ultimate Bravery:\n\n${name} (Cost: ${cost})\nRole: ${role}\nTraits: ${traits}');
         } catch (err) {
             console.error(err);
             alert('TFT Ultimate Bravery: could not load data. See console for details.');
