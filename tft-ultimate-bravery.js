@@ -17,7 +17,14 @@ document.addEventListener('DOMContentLoaded', function () {
             const cost = cols[1] || '';
             const role = cols[2] || '';
             const traits = cols.slice(3);
-            alert('TFT Ultimate Bravery:\n\n${name} (Cost: ${cost})\nRole: ${role}\nTraits: ${traits}');
+            alert(`TFT Ultimate Bravery:\n\n${name} (Cost: ${cost})\nRole: ${role}\nTraits: ${traits}`);
+            
+            // filter rows that share no traits with constantTraits
+            const data2 = data.filter(row => {
+                const rowTraits = row.split(',').slice(3);
+                return rowTraits.every(t => !traits.includes(t));
+            });
+
         } catch (err) {
             console.error(err);
             alert('TFT Ultimate Bravery: could not load data. See console for details.');

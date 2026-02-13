@@ -1,3 +1,3 @@
 eval "$(ssh-agent -s)"
-ssh-add ~/.ssh2/id_ed25519
+ssh-add ~/.ssh/goguro8
 ssh -T git@github.com
