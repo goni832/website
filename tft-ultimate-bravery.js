@@ -20,22 +20,22 @@ document.addEventListener('DOMContentLoaded', function () {
             var data = [];
             for (let i = 0; i < data_raw.length; i++) {
                 var row = data_raw[i].split(',');
-                var cost_cl1 = row[1] || '';
-                var name_cl1 = row[0] || '';
+                var cost_cl1 = row[2] || '';
+                var name_cl1 = row[1] || '';
                 if (allowed_costs.includes(cost_cl1)) {
                     if (!blacklisted_units.includes(name_cl1)) {
                         data.push(data_raw[i]);
                     }
                 }
             }
-            
+            alert(`${data_raw}`);
+
             const random = data[Math.floor(Math.random() * data.length)];
             const cols = random.split(',');
-            const name = cols[0] || 'Unknown';
-            const cost = cols[1] || '';
-            const role = cols[2] || '';
-            const traits = cols.slice(3).filter(s => s.trim() !== "");
-            alert(`TFT Ultimate Bravery:\n\n${name} (Cost: ${cost})\nRole: ${role}\nTraits: ${traits}`);
+            const name = cols[1] || 'Unknown';
+            const cost = cols[2] || '';
+            const role = cols[3] || '';
+            const traits = cols.slice(4).filter(s => s.trim() !== "");
             
             // filter rows that share no traits with constantTraits
             var data2 = [];
@@ -48,8 +48,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
             for (let i = 0; i < data.length; i++) {
                 var row2 = data[i].split(',');
-                var traits_cl2 = row2.slice(3).filter(s => s.trim() !== "");
-                var role_cl2 = row2[2] || '';
+                var traits_cl2 = row2.slice(4).filter(s => s.trim() !== "");
+                var role_cl2 = row2[3] || '';
                 if (traits_cl2.every(t => !traits.includes(t))) {
                     if (pos2.includes(role_cl2)) {
                         data2.push(data[i]);
@@ -59,11 +59,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
             const random2 = data2[Math.floor(Math.random() * data2.length)];
             const cols2 = random2.split(',');
-            const name2 = cols2[0] || 'Unknown';
-            const cost2 = cols2[1] || '';
-            const role2 = cols2[2] || '';
-            const traits2 = cols2.slice(3).filter(s => s.trim() !== "");
-            alert(`TFT Ultimate Bravery:\n\n${name2} (Cost: ${cost2})\nRole: ${role2}\nTraits: ${traits2}`);
+            const name2 = cols2[1] || 'Unknown';
+            const cost2 = cols2[2] || '';
+            const role2 = cols2[3] || '';
+            const traits2 = cols2.slice(4).filter(s => s.trim() !== "");
+
+            // display results
+            const resultsDiv = document.getElementById('tft-results');
+            if (resultsDiv) {
+                resultsDiv.innerHTML = `<p>Name: <strong>${name}</strong></p><p>Name 2: <strong>${name2}</strong></p>`;
+            }
 
         } catch (err) {
             console.error(err);
