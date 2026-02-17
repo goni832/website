@@ -132,7 +132,40 @@
         <section class="hero">
             <h1>Welcome to my page</h1>
             <p>Find the different tools available</p>
-            <a id="tft-ultimate-bravery" class="btn" href="#">TFT Ultimate Bravery</a>
+        </section>
+
+        <section class="hero">
+            <h1>TFT Ultimate Bravery</h1>
+
+            <p style="margin:0rem">Allowable costs:</p>
+            <div id="cost-checkboxes" style="margin-bottom:1rem ;">
+                <label style="margin-right:1rem;">
+                    1 <input type="checkbox" name="cost" value="1" checked>
+                </label>
+                <label style="margin-right:1rem;">
+                    2 <input type="checkbox" name="cost" value="2" checked>
+                </label>
+                <label style="margin-right:1rem;">
+                    3 <input type="checkbox" name="cost" value="3" checked>
+                </label>
+                <label style="margin-right:1rem;">
+                    4 <input type="checkbox" name="cost" value="4" checked>
+                </label>
+                <label style="margin-right:1rem;">
+                    5 <input type="checkbox" name="cost" value="5">
+                </label>
+                <label style="margin-right:1rem;">
+                    7 <input type="checkbox" name="cost" value="7">
+                </label>
+            </div>
+        
+            <select id="tft-selector" style="margin-top:0.5rem; padding:0.5rem; font-size:1rem;">
+                <option value="">Blacklisted units:</option>
+            </select>
+                
+            <div id="selected-list" style="max-width:150px; margin:0 auto 2rem; text-align:center;" ></div>
+            
+            <a id="tft-ultimate-bravery" class="btn" href="#">I'm brave!</a>
             <div id="tft-results" style="margin-top:1rem; text-align:center; font-size:1.25rem; color:#fff;"></div>
         </section>
 
