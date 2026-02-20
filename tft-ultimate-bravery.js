@@ -1,12 +1,14 @@
 document.addEventListener('DOMContentLoaded', function () {
     const btn = document.getElementById('tft-ultimate-bravery');
+    const Btn = document.getElementById('tft-show-hide');
     if (!btn) return;
 
     // when an option is selected, add it to the list on the right
-    const selector = document.getElementById('tft-selector');
+    const blackselector = document.getElementById('tft-selector');
+    const unitselector = document.getElementById('unit-selector');
 
     // populate the drop‑down using the "Name" column from the CSV
-    async function populateSelector() {
+    async function populateSelector(selector) {
         if (!selector) return;
         try {
             const res = await fetch('tft16.csv');
@@ -25,6 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 opt.value = name;
                 opt.textContent = name;
                 selector.appendChild(opt);
+                //unitselector.appendChild(opt);
             }
             addSelectedItem("Nasus")
             addSelectedItem("Renekton")
@@ -34,8 +37,11 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    if (selector) {
-        populateSelector();
+    if (blackselector) {
+        populateSelector(blackselector);
+    }
+    if (unitselector) {
+        populateSelector(unitselector);
     }
 
     function addSelectedItem(value) {
@@ -65,16 +71,33 @@ document.addEventListener('DOMContentLoaded', function () {
         item.appendChild(textSpan);
         list.appendChild(item);
     }
-    if (selector) {
-        selector.addEventListener('change', function () {
+    if (blackselector) {
+        blackselector.addEventListener('change', function () {
             addSelectedItem(this.value);
             this.value = '';
         });
     }
 
+    Btn.addEventListener('click', async function (e) {
+        e.preventDefault();
+        try {
+            const TFT_block = document.getElementById('TFT');
+            TFT_block.hidden = !TFT_block.hidden;
+        } catch (err) {
+            console.error(err);
+            alert('TFT Ultimate Bravery: cannot initialize.');
+        }
+    });
+
     btn.addEventListener('click', async function (e) {
         e.preventDefault();
         try {
+            const resultsDiv = document.getElementById('tft-results');
+            const img2=document.getElementById('img2')
+            if(img2){
+                const content_height = `calc(${img2.clientHeight}px + 3rem)`;
+                resultsDiv.style.setProperty("--height", content_height);}
+
             const front = ["Attack Assassin","Attack Fighter","Attack Tank","Hybrid Fighter","Magic Assassin","Magic Fighter","Magic Tank"]
             const back = ["Attack Caster","Attack Marksman","Attack Specialist","Magic Caster","Magic Marksman","Magic Specialist"]
             
@@ -90,12 +113,25 @@ document.addEventListener('DOMContentLoaded', function () {
             }
             const blacklisted_units = getBlacklisted();
 
+            function getForcedUnit(){
+                return unitselector.value
+            }
+            const forced_unit = getForcedUnit();
+
             const res = await fetch('tft16.csv');
             if (!res.ok) throw new Error('Failed to fetch CSV');
             const text = await res.text();
             const rows = text.trim().split('\n');
             if (rows.length <= 1) throw new Error('CSV empty');
             let data_raw = rows.slice(1).filter(Boolean);
+
+            let rowStr
+            if (forced_unit != ""){
+                rowStr = data_raw.find(line => {
+                    const cols = line.split(",");
+                    return (cols[1] ?? "").trim() === forced_unit;
+                });
+            }
 
             var data = [];
             for (let i = 0; i < data_raw.length; i++) {
@@ -108,8 +144,14 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                 }
             }
-
-            const unit1 = data[Math.floor(Math.random() * data.length)];
+            
+            let unit1
+            if(forced_unit != ""){
+                unit1 = rowStr
+            }else{
+                unit1 = data[Math.floor(Math.random() * data.length)];
+            }
+            
             const cols = unit1.split(',');
             const name = cols[1] || 'Unknown';
             const cost = cols[2] || '';
@@ -144,29 +186,32 @@ document.addEventListener('DOMContentLoaded', function () {
             const traits2 = cols2.slice(4).filter(s => s.trim() !== "");
 
             // display results
-            const resultsDiv = document.getElementById('tft-results');
+            
             if (resultsDiv) {
                 // use the unit ID (column 0) for image filenames, lowercase for safety
                 const id = cols[0] || '';
                 const id2 = cols2[0] || '';
-
+                
                 resultsDiv.innerHTML = `
-                    <div style="display:flex; justify-content:space-between;">
+                    <div style="display:flex; justify-content:space-between;" >
                         <div style="flex:1; text-align:center; margin-right:2rem;">
-                            <p><strong>${name}</strong></p>
-                            ${id ? `<img src="set16_thumbs/${id}.jpg" alt="${name}" />` : ''}
+                            <p style="font-size:1.6rem;"><strong>${name}</strong></p>
+                            ${id ? `<img src="set16_thumbs/${id}.jpg" alt="${name}" style ="border-radius:16px; max-width:100%; height:auto;" />` : ''}
                         </div>
                         <div style="flex:1; text-align:center;">
-                            <p><strong>${name2}</strong></p>
-                            ${id2 ? `<img src="set16_thumbs/${id2}.jpg" alt="${name2}" />` : ''}
+                            <p style="font-size:1.6rem;"><strong>${name2}</strong></p>
+                            ${id2 ? `<img src="set16_thumbs/${id2}.jpg" alt="${name2}" id="img2" style ="border-radius:16px; max-width:100%; height:auto;" />` : ''}
                         </div>
                     </div>
                 `;
+                
             }
+            
 
         } catch (err) {
             console.error(err);
             alert('TFT Ultimate Bravery: could not load data. See console for details.');
         }
     });
+    
 });
