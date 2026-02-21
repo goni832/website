@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     const btn = document.getElementById('tft-ultimate-bravery');
     const Btn = document.getElementById('tft-show-hide');
+    const btn_help = document.getElementById('tft-help');
     if (!btn) return;
 
     // when an option is selected, add it to the list on the right
@@ -89,14 +90,28 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    btn_help.addEventListener('click', async function (e) {
+        e.preventDefault();
+        try {
+            alert("This tool will randomly pick two TFT units that have no traits in common. Additionally, one unit will be backline and the other frontline. You can ban units, pick which unit costs to allow in the results, and force a unit to be always picked (only randomizing its partner).")
+        } catch (err) {
+            console.error(err);
+            alert('TFT Ultimate Bravery: cannot initialize.');
+        }
+    });
+
     btn.addEventListener('click', async function (e) {
         e.preventDefault();
         try {
             const resultsDiv = document.getElementById('tft-results');
             const img2=document.getElementById('img2')
             if(img2){
-                const content_height = `calc(${img2.clientHeight}px + 3rem)`;
-                resultsDiv.style.setProperty("--height", content_height);}
+                const content_height = `calc(${img2.clientHeight}px + 4rem)`;
+                if (content_height != "calc(0px + 4rem)"){
+                    resultsDiv.style.setProperty("--height", content_height);
+                }
+            }
+                
 
             const front = ["Attack Assassin","Attack Fighter","Attack Tank","Hybrid Fighter","Magic Assassin","Magic Fighter","Magic Tank"]
             const back = ["Attack Caster","Attack Marksman","Attack Specialist","Magic Caster","Magic Marksman","Magic Specialist"]
