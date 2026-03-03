@@ -65,7 +65,7 @@
             flex: 1;
         }
         
-        .hero {
+        .bighero {
             --width: ;
             --height: 20%;
 
@@ -78,6 +78,22 @@
             color: rgb(255, 255, 255);
             border-radius: 8px;
             margin-bottom: 2rem;
+            transition: padding 250ms ease;
+        }
+        
+        .hero {
+            --width: ;
+            --height: 20%;
+
+            text-align: center;
+
+            height: var(--height);
+            width: 90%;
+            padding: 2.5rem 6rem 2rem 6rem;
+            background: linear-gradient(315deg, #3C3C3C 0%, #676767 100%);
+            color: rgb(255, 255, 255);
+            border-radius: 8px;
+            margin: 2rem auto 0;
             transition: padding 250ms ease;
         }
         
@@ -160,14 +176,14 @@
     </header>
 
     <main>
-        <section class="hero">
+        <section class="bighero">
             <h1>Welcome to my page</h1>
             <p>Find the different tools available</p>
         </section>
 
         <section id="tft-container" class="hero">
             
-            <h1 id="tft-show-hide" class = "btn2">TFT Ultimate Bravery<h1 style= "margin-left: 0.5rem; text-align: up;" class="btn2" id="tft-help"><sup style="font-size:1rem;">�</sup></h1></h1>
+            <h2 id="tft-show-hide" class = "btn2">TFT Ultimate Bravery<h1 style= "margin-left: 0.5rem; text-align: up;" class="btn2" id="tft-help"><sup style="font-size:1rem;">�</sup></h1></h2>
                 
             <div id="TFT" hidden="true">
             

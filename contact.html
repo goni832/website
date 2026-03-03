@@ -65,7 +65,7 @@
             flex: 1;
         }
         
-        .hero {
+        .bighero {
             --width: ;
             --height: 20%;
 
@@ -78,6 +78,22 @@
             color: rgb(255, 255, 255);
             border-radius: 8px;
             margin-bottom: 2rem;
+            transition: padding 250ms ease;
+        }
+        
+        .hero {
+            --width: ;
+            --height: 20%;
+
+            text-align: center;
+
+            height: var(--height);
+            width: 90%;
+            padding: 2.5rem 6rem 2rem 6rem;
+            background: linear-gradient(315deg, #3C3C3C 0%, #676767 100%);
+            color: rgb(255, 255, 255);
+            border-radius: 8px;
+            margin: 2rem auto 0;
             transition: padding 250ms ease;
         }
         
@@ -160,19 +176,17 @@
     </header>
 
     <main>
-        <section class="hero">
+        <section class="bighero">
             <h1>Contact</h1>
             <p>Contact me directly about anything</p>
         </section>
 
         <section class="hero">
-            <h2>Mail message</h2>
-            <p>
-                I'm Goni832, a passionate developer and creator. I love building tools and 
-                applications that help people solve problems and make their lives easier. 
-                With a strong interest in programming and web development, I'm constantly 
-                learning and experimenting with new technologies.
-            </p>
+            <h2>Comments</h2>
+            <div><label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="(Anonymous if empty)"></div>
+            <div><textarea style="max-width:100%; margin-top: 1rem; margin-bottom:1rem;" rows="10" cols="800" type="text" id="comment" placeholder="Type here"></textarea></div>
+            <div><a id="submit" class="btn" href="#">Submit</a></div>
         </section>
 
     </main>
@@ -180,5 +194,6 @@
     <footer>
         <p>&copy; 2026 Goni832. Non commercial.</p>
     </footer>
+    <script src="comments.js"></script>
 </body>
 </html>
