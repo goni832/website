@@ -158,6 +158,13 @@
             padding: 1.5rem;
             margin-top: 0;
         }
+
+        #cusdis_thread,
+        #cusdis_thread iframe {
+            width: 100%;
+            height: 50rem;
+            color:#ffffff;
+        }
     </style>
 </head>
 <body>
@@ -181,12 +188,15 @@
             <p>Contact me directly about anything</p>
         </section>
 
-        <section class="hero">
+        <section class="hero" style="height:fit-content">
             <h2>Comments</h2>
-            <div><label for="name">Name:</label>
-            <input type="text" id="name" name="name" placeholder="(Anonymous if empty)"></div>
-            <div><textarea style="max-width:100%; margin-top: 1rem; margin-bottom:1rem;" rows="10" cols="800" type="text" id="comment" placeholder="Type here"></textarea></div>
-            <div><a id="submit" class="btn" href="#">Submit</a></div>
+            <div id="cusdis_thread"
+            data-host="https://cusdis.com"
+            data-app-id="f5777e28-b970-4ea2-b6e9-c8981a3cc771"
+            data-page-id= "/contact"
+            data-page-url= "https://680631605.xyz/contact.html"
+            data-page-title= "Contact"
+            ></div>
         </section>
 
     </main>
@@ -194,6 +204,8 @@
     <footer>
         <p>&copy; 2026 Goni832. Non commercial.</p>
     </footer>
-    <script src="comments.js"></script>
+
+
+    <script async src="https://cusdis.com/js/cusdis.es.js"></script>
 </body>
 </html>
